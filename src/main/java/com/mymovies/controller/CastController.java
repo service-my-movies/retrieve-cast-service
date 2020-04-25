@@ -12,6 +12,7 @@ import com.mymovies.dto.CastDTO;
 import com.mymovies.service.ICastService;
 
 @Controller
+@RequestMapping("/cast")
 public class CastController implements ICastController {
 	
 	@Autowired
