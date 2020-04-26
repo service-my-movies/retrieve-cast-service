@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -14,7 +15,7 @@ import com.mymovies.dto.CreditDTO;
 @Service
 public class CastService implements ICastService {
 
-	@Value("${resource.api.url}")
+	@Value("${resource.api.url.base}")
 	private String BASE_URL;
 	
 	@Value("${resource.api.url.image}")
@@ -28,7 +29,8 @@ public class CastService implements ICastService {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(CastService.class);
 	
-	private RestTemplate restTemplate = new RestTemplate();
+	@Autowired
+	private RestTemplate restTemplate;
 	
 	public ArrayList<CastDTO> getAPI_Cast(String movie_id) {
 
