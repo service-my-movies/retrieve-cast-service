@@ -33,7 +33,7 @@ public class CastController implements ICastController {
 		try {
 			listOfCast = castService.getAPI_Cast(movie_id);
 		} catch (Exception e) {
-			LOGGER.error("ERROR: " + e);
+			LOGGER.error("Unexpected Error From Controller: getAPI_Cast: " + e);
 		}
 
 		return listOfCast;

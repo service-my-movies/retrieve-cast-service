@@ -37,7 +37,7 @@ public class CastService implements ICastService {
 		try {
 			credits = restTemplate.getForObject(BASE_URL+movie_id+"/credits"+API_KEY+Language, CreditDTO.class);
 		} catch (Exception e) {
-			LOGGER.error("Unexpected Error: getAPI_Cast: " + e);
+			LOGGER.error("Unexpected Error From Service: getAPI_Cast: " + e);
 		}
 
 		return credits.getCast();
