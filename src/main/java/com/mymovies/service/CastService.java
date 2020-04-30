@@ -6,7 +6,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -14,7 +13,6 @@ import com.mymovies.dto.CastDTO;
 import com.mymovies.dto.CreditDTO;
 
 @Service
-@RefreshScope
 public class CastService implements ICastService {
 
 	@Value("${resource.api.url.base}")
